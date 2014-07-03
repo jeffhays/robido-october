@@ -1,0 +1,114 @@
+description = "Default"
+==
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ this.page.title }} - {{ name }}</title>
+        <meta name="author" content="Robido">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% styles %}
+        <link href="{{ [
+            'assets/css/normalize.css',
+            'assets/css/foundation.min.css',
+            'assets/css/theme.css'
+        ]|theme }}" rel="stylesheet">
+    </head>
+    <body>
+
+        <!-- Header -->
+        <header id="layout-header">
+
+        </header>
+
+        <!-- Mobile Nav -->
+        <div class="off-canvas-wrap docs-wrap" data-offcanvas="">
+            <div class="inner-wrap">
+
+                <nav class="tab-bar">
+                    <section class="left-small">
+                        <a class="left-off-canvas-toggle menu-icon"><span></span></a>
+                    </section>
+
+                    <section class="middle tab-bar-section">
+                        <a href="{{ 'home'|page }}"><h1 class="title">{{ name }}</h1></a>
+                    </section>
+
+                    <section class="right-small">
+                        <a class="right-off-canvas-toggle menu-icon" href="#"><span></span></a>
+                    </section>
+                </nav>
+
+                <!-- Left Menu -->
+                <aside class="left-off-canvas-menu">
+                    <ul class="off-canvas-list">
+                        <li><label>Foundation</label></li>
+                        <li><a href="{{ 'home'|page }}">Home</a></li>
+                        <li><label>{{ name }}</label></li>
+                        <li><a href="{{ 'account'|page }}">My Account</a></li>
+                    </ul>
+                </aside>
+
+                <!-- Right Menu -->
+                <aside class="right-off-canvas-menu">
+                    <ul class="off-canvas-list">
+                        <li><label>{{ name }} Community</label></li>
+                        <li><a href="{{ 'account'|page }}">Your Account</a></li>
+                    </ul>
+                </aside>
+
+                <section class="main-section">
+                    <div class="row">
+                        <div class="large-12 columns">
+
+                        <!-- Content -->
+                        <section id="layout-content">
+                            <h1>{{ this.page.title }}</h1>
+                            <p>{% page %}</p>
+                        </section>
+
+                    </div>
+                </section>
+
+                <a class="exit-off-canvas"></a>
+
+            </div>
+        </div>
+
+        <!-- Nav -->
+        <nav id="layout-nav" class="navbar" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{{ 'home'|page }}">October Demo</a>
+                </div>
+                <div class="collapse navbar-collapse navbar-main-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="{% if this.page.id == 'home' %}active{% endif %}"><a href="{{ 'home'|page }}">Basic concepts</a></li>
+                        <li class="{% if this.page.id == 'ajax' %}active{% endif %}"><a href="{{ 'ajax'|page }}">AJAX framework</a></li>
+                        <li class="{% if this.page.id == 'plugins' %}active{% endif %}"><a href="{{ 'plugins'|page }}">Plugin components</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Footer -->
+        <footer id="layout-footer">
+            {% partial "footer" %}
+        </footer>
+
+        <!-- Scripts -->
+        <script src="{{ [
+            'assets/js/jquery.min.js',
+            'assets/js/foundation.min.js',
+            'assets/js/app.js'
+        ]|theme }}"></script>
+        {% framework extras %}
+        {% scripts %}
+
+    </body>
+</html>
