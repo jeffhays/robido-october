@@ -2,6 +2,16 @@
  *	This is the robido October theme by Jeff Hays (jphase)
  */
 
- body {
- 	background: #333 url(../images/tweed.png) center center;
- }
+body {
+	background: url(../images/bg.png);
+}
+
+#layout-header {
+	border-bottom: 5px solid #FBB829;
+}
+
+#layout-footer {
+	color: #fff;
+	background: #333;
+	min-height: 10rem;
+}

@@ -1,0 +1,23 @@
+title = "Blog"
+url = "/blog"
+layout = "default"
+description = "Blog posts"
+
+[blogCategories]
+idParam = ":slug"
+categoryPage = "blog/category"
+categoryPageIdParam = ":slug"
+displayEmpty = "0"
+
+[blogPosts]
+postsPerPage = "10"
+pageParam = ":page"
+categoryPage = "blog/category"
+categoryPageIdParam = ":slug"
+postPage = "blog/post"
+postPageIdParam = ":slug"
+noPostsMessage = "No posts found"
+==
+{% component 'blogCategories' %}
+
+{% component 'blogPosts' %}
