@@ -1,0 +1,12 @@
+title = "Contact"
+url = "/contact"
+layout = "default"
+description = "Drop us a line"
+
+[mailTemplate]
+templateName = "demo-template"
+responseTemplate = "octodevel.octomail::emails.autoresponse"
+responseFieldName = "name"
+responseFieldEmail = "email"
+==
+{% component 'mailTemplate' %}
