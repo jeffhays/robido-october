@@ -1,0 +1,13 @@
+title = "Forum Channel"
+url = "/forum/channel/:slug"
+layout = "default"
+description = "Viewing a specific forum channel"
+
+[forumChannel]
+idParam = ":slug"
+memberPage = "account"
+memberPageIdParam = ":slug"
+topicPage = "forum/topic"
+topicPageIdParam = ":slug"
+==
+{% component 'forumChannel' %}

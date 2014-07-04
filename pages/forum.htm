@@ -3,14 +3,12 @@ url = "/forum"
 layout = "default"
 description = "Choose from the topics below or start your own topic"
 
-[forumTopics]
-memberPageIdParam = ":slug"
-topicPageIdParam = ":slug"
-
 [forumChannels]
+memberPage = "account"
 memberPageIdParam = ":slug"
+channelPage = "forum/channel"
 channelPageIdParam = ":slug"
+topicPage = "forum/topic"
 topicPageIdParam = ":slug"
 ==
 {% component 'forumChannels' %}
-{% component 'forumTopics' %}

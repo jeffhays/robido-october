@@ -3,6 +3,29 @@ url = "/"
 layout = "default"
 description = "Developers and designers that push the web forward"
 ==
-<p>Robido is a collective of web developers and designers that push the latest bleeding edge technologies to the foreground of web development. We currently do contract work for a plethora of clients but also pride ourselves in being a development collective that gives back to Open Source projects and contributes to the knowledge of new young talent all across the web.</p>
-
-<p>We're darn good at what we do and love contributing to the Open Source community so much that we make all of our non-commercial projects Open Source and available for download. Transparency is a big part of our business model and we love to encourage community feedback. Tell us what we can do better or even what you would have done in our shoes!</p>
+<div class="row">
+	<div class="small-12 columns">
+        <h1>{{ this.page.title }}</h1>
+        <h3 class="subheader">{{ this.page.description }}</h3>
+		{% content "welcome.htm" %}
+	</div>
+</div>
+<div class="full">
+	<div class="row">
+		<div class="small-12 columns">
+			<h3 class="subheader">Tricks of the trade</h3>
+			<div class="carousel">
+				<ul class="large-block-grid-8">
+					<li><i class="fa fa-html5 fa-5x"></i></li>
+					<li><i class="fa fa-css3 fa-5x"></i></li>
+					<li><i class="fa fa-git fa-5x"></i></li>
+					<li><i class="fa fa-wordpress fa-5x"></i></li>
+					<li><i class="fa fa-bitcoin fa-5x"></i></li>
+					<li><i class="fa fa-openid fa-5x"></i></li>
+					<li><i class="fa fa-android fa-5x"></i></li>
+					<li><i class="fa fa-apple fa-5x"></i></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

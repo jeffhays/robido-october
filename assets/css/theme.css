@@ -1,17 +1,512 @@
 /*
  *	This is the robido October theme by Jeff Hays (jphase)
  */
+@font-face {
+  font-family: 'MavenProLight100';
+  src: url("../fonts/mavenprolight-100.eot");
+  src: url("../fonts/mavenprolight-100.eot") format("embedded-opentype"), url("../fonts/mavenprolight-100.woff") format("woff"), url("../fonts/mavenprolight-100.ttf") format("truetype"), url("../fonts/mavenprolight-100.svg#MavenProLight100") format("svg");
+}
 
+@font-face {
+  font-family: 'MavenProLight300';
+  src: url("../fonts/mavenprolight-300.eot");
+  src: url("../fonts/mavenprolight-300.eot") format("embedded-opentype"), url("../fonts/mavenprolight-300.woff") format("woff"), url("../fonts/mavenprolight-300.ttf") format("truetype"), url("../fonts/mavenprolight-300.svg#MavenProLight300") format("svg");
+}
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - Reset
+2.0 - Elements
+3.0 - Typography
+4.0 - Inputs and buttons
+5.0 - Links
+6.0 - Accessibility
+7.0 - Alignments
+8.0 - Clearings
+9.0 - Widgets
+9.0 - Content
+	9.1 - Posts and pages
+	9.2 - Asides
+	9.3 - Comments
+10.0 - Utility classes
+11.0 - Media
+12.0 - Foundation overrides
+13.0 - Media queries
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+1.0 - Reset
+--------------------------------------------------------------*/
+/* line 47, ../scss/theme.scss */
 body {
-	background: url(../images/bg.png);
+  background: url(../images/bg.png);
 }
 
+/* line 52, ../scss/theme.scss */
+h1, h2, h3, h4, h5 {
+  font-family: 'MavenProLight300';
+}
+
+/*--------------------------------------------------------------
+2.0 Elements
+--------------------------------------------------------------*/
+/* line 59, ../scss/theme.scss */
+hr {
+  background-color: #ccc;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em;
+}
+
+/* line 65, ../scss/theme.scss */
+ul, ol {
+  margin: 0 0 1.5em 3em;
+}
+
+/* line 68, ../scss/theme.scss */
+ul {
+  list-style: disc;
+}
+
+/* line 71, ../scss/theme.scss */
+ol {
+  list-style: decimal;
+}
+
+/* line 75, ../scss/theme.scss */
+li > ul,
+li > ol {
+  margin-bottom: 0;
+  margin-left: 1.5em;
+}
+
+/* line 79, ../scss/theme.scss */
+dt {
+  font-weight: bold;
+}
+
+/* line 82, ../scss/theme.scss */
+dd {
+  margin: 0 1.5em 1.5em;
+}
+
+/* line 85, ../scss/theme.scss */
+figure {
+  margin: 0;
+}
+
+/* line 88, ../scss/theme.scss */
+table {
+  margin: 0 0 1.5em;
+  width: 100%;
+}
+
+/* line 92, ../scss/theme.scss */
+th {
+  font-weight: bold;
+}
+
+/* line 95, ../scss/theme.scss */
+article.page {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+3.0 Typography
+--------------------------------------------------------------*/
+/* line 106, ../scss/theme.scss */
+body,
+button,
+input,
+select,
+textarea {
+  background: #f0f0f0;
+  color: #404040;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+/* line 114, ../scss/theme.scss */
+h1, h2, h3, h4, h5, h6 {
+  clear: both;
+}
+
+/* line 117, ../scss/theme.scss */
+p {
+  margin-bottom: 1.5em;
+}
+
+/* line 120, ../scss/theme.scss */
+b, strong {
+  font-weight: bold;
+}
+
+/* line 123, ../scss/theme.scss */
+dfn, cite, em, i {
+  font-style: italic;
+}
+
+/* line 126, ../scss/theme.scss */
+blockquote {
+  margin: 0 1.5em;
+}
+
+/* line 129, ../scss/theme.scss */
+address {
+  margin: 0 0 1.5em;
+}
+
+/* line 132, ../scss/theme.scss */
+pre {
+  background: #eee;
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6em;
+}
+
+/* line 143, ../scss/theme.scss */
+code, kbd, tt, var {
+  font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+/* line 146, ../scss/theme.scss */
+abbr, acronym {
+  border-bottom: 1px dotted #666;
+  cursor: help;
+}
+
+/* line 150, ../scss/theme.scss */
+mark, ins {
+  background: #fff9c0;
+  text-decoration: none;
+}
+
+/* line 155, ../scss/theme.scss */
+sup,
+sub {
+  font-size: 75%;
+  height: 0;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 162, ../scss/theme.scss */
+sup {
+  bottom: 1ex;
+}
+
+/* line 165, ../scss/theme.scss */
+sub {
+  top: .5ex;
+}
+
+/* line 168, ../scss/theme.scss */
+small {
+  font-size: 75%;
+}
+
+/* line 171, ../scss/theme.scss */
+big {
+  font-size: 125%;
+}
+
+/*--------------------------------------------------------------
+4.0 Inputs and buttons
+--------------------------------------------------------------*/
+/* line 181, ../scss/theme.scss */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* Corrects font size not being inherited in all browsers */
+  margin: 0;
+  /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+  vertical-align: baseline;
+  /* Improves appearance and consistency in all browsers */
+  *vertical-align: middle;
+  /* Improves appearance and consistency in all browsers */
+}
+
+/* line 190, ../scss/theme.scss */
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+  border-color: #ccc #bbb #aaa #bbb;
+}
+
+/* line 200, ../scss/theme.scss */
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+button:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+  border-color: #aaa #bbb #bbb #bbb;
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* line 205, ../scss/theme.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  padding: 0;
+  /* Addresses excess padding in IE8/9 */
+}
+
+/* line 208, ../scss/theme.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* Addresses appearance set to searchfield in S5, Chrome */
+  -webkit-box-sizing: content-box;
+  /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* line 214, ../scss/theme.scss */
+input[type="search"]::-webkit-search-decoration {
+  /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+  -webkit-appearance: none;
+}
+
+/* line 218, ../scss/theme.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+  border: 0;
+  padding: 0;
+}
+
+/* line 227, ../scss/theme.scss */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+  color: #111;
+}
+
+/* line 234, ../scss/theme.scss */
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"] {
+  padding: 3px;
+}
+
+/* line 237, ../scss/theme.scss */
+textarea {
+  overflow: auto;
+  /* Removes default vertical scrollbar in IE6/7/8/9 */
+  padding-left: 3px;
+  vertical-align: top;
+  /* Improves readability and alignment in all browsers */
+  width: 98%;
+}
+
+/* line 243, ../scss/theme.scss */
+.search-submit {
+  height: 45px;
+}
+
+/* line 246, ../scss/theme.scss */
+.widget_archive select {
+  font-size: 60%;
+}
+
+/*--------------------------------------------------------------
+5.0 Links
+--------------------------------------------------------------*/
+/* line 253, ../scss/theme.scss */
+a:visited {
+  color: #a3a;
+}
+
+/*--------------------------------------------------------------
+6.0 Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers */
+/* line 261, ../scss/theme.scss */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+}
+
+/* line 268, ../scss/theme.scss */
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar */
+}
+
+/*--------------------------------------------------------------
+7.0 Alignments
+--------------------------------------------------------------*/
+/* line 290, ../scss/theme.scss */
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
+}
+
+/* line 295, ../scss/theme.scss */
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
+}
+
+/* line 300, ../scss/theme.scss */
+.aligncenter {
+  clear: both;
+  display: block;
+  margin: 0 auto;
+}
+
+/*--------------------------------------------------------------
+8.0 Clearings
+--------------------------------------------------------------*/
+/* line 320, ../scss/theme.scss */
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+  content: '';
+  display: table;
+}
+
+/* line 330, ../scss/theme.scss */
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+  clear: both;
+}
+
+/*--------------------------------------------------------------
+9.0 Content
+--------------------------------------------------------------*/
+/* line 338, ../scss/theme.scss */
 #layout-header {
-	border-bottom: 5px solid #FBB829;
+  border-bottom: 5px solid #FBB829;
 }
 
+/* line 342, ../scss/theme.scss */
 #layout-footer {
-	color: #fff;
-	background: #333;
-	min-height: 10rem;
+  color: #fff;
+  background: #333;
+  min-height: 10rem;
 }
+
+/*--------------------------------------------------------------
+9.1 Posts and pages
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+9.2 Asides
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+9.3 Comments
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+10.0 Utility classes
+--------------------------------------------------------------*/
+/* line 366, ../scss/theme.scss */
+.nomarg {
+  margin: 0;
+}
+
+/* line 367, ../scss/theme.scss */
+.half {
+  width: 50%;
+}
+
+@-webkit-keyframes rotate {
+  /* line 369, ../scss/theme.scss */
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  /* line 372, ../scss/theme.scss */
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+/* line 376, ../scss/theme.scss */
+.rotate {
+  -webkit-animation-name: rotate;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+
+/* line 382, ../scss/theme.scss */
+.round-image img {
+  border-radius: 300px;
+  -webkit-border-radius: 300px;
+  -moz-border-radius: 300px;
+}
+
+/* line 387, ../scss/theme.scss */
+.center-image img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* line 391, ../scss/theme.scss */
+.shadow {
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.35);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.35);
+  box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.35);
+}
+
+/*--------------------------------------------------------------
+11.0 Media
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+12.0 Foundation overrides
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+13.0 Media queries
+--------------------------------------------------------------*/
+/* Mobile */
+/* Tablet */

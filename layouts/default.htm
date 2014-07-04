@@ -1,4 +1,7 @@
 description = "Default"
+
+[session]
+security = "all"
 ==
 <?php
 function onStart() {
@@ -17,8 +20,8 @@ function onStart() {
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="{{ [
             'assets/css/normalize.css',
-            'assets/css/app.css',
-            'assets/css/theme.css'
+            'assets/css/owl.carousel.css',
+            'assets/css/app.css'
         ]|theme }}" rel="stylesheet">
     </head>
     <body>
@@ -26,60 +29,26 @@ function onStart() {
         <!-- Header -->
         <header id="layout-header"></header>
 
-        <!-- Mobile Nav -->
+        <!-- Canvas -->
         <div class="off-canvas-wrap docs-wrap" data-offcanvas="">
             <div class="inner-wrap">
 
-                <nav class="tab-bar">
-                    <section class="left tab-bar-section">
-                        <div class="icon-bar four-up">
-                            <a href="{{ 'home'|page }}" class="item">
-                                <i class="fa fa-home"></i>
-                                <label>{{ name }}</label>
-                            </a>
-                            <a href="{{ 'blog'|page }}" class="item">
-                                <i class="fa fa-pencil"></i>
-                                <label>Blog</label>
-                            </a>
-                            <a href="{{ 'forum'|page }}" class="item">
-                                <i class="fa fa-comments"></i>
-                                <label>Forum</label>
-                            </a>
-                            <a href="{{ 'contact'|page }}" class="item">
-                                <i class="fa fa-paper-plane"></i>
-                                <label>Contact</label>
-                            </a>
+                <!-- Navigation -->
+                {% partial "nav" %}
+
+                <!-- Content -->
+                <section id="layout-content">
+                    {% if this.page.settings.url == '/' %}
+                        {% page %}
+                    {% else %}
+                        <div class="row">
+                            <div class="small-12 columns">
+                                <h1>{{ this.page.title }}</h1>
+                                <h3 class="subheader">{{ this.page.description }}</h3>
+                                {% page %}
+                            </div>
                         </div>
-                    </section>
-
-                    <section class="right-small">
-                        <a class="right-off-canvas-toggle menu-icon" href="#"><span></span></a>
-                    </section>
-                </nav>
-
-                <!-- Right Menu -->
-                <aside class="right-off-canvas-menu">
-                    <ul class="off-canvas-list">
-                        <li><label>{{ name }} Community</label></li>
-                        <li><a href="{{ 'forum'|page }}">Forum</a></li>
-                        <li><label>Your {{ name }} Account</label></li>
-                        <li><a href="{{ 'account'|page }}">Your Profile</a></li>
-                        <li><a href="{{ 'reset-password'|page }}">Forgot Password</a></li>
-                    </ul>
-                </aside>
-
-                <section class="main-section">
-                    <div class="row">
-                        <div class="large-12 columns">
-
-                        <!-- Content -->
-                        <section id="layout-content">
-                            <h1>{{ this.page.title }}</h1>
-                            <h3 class="subheader">{{ this.page.description }}</h3>
-                            {% page %}
-                        </section>
-
-                    </div>
+                    {% endif %}
                 </section>
 
                 <a class="exit-off-canvas"></a>
@@ -96,10 +65,10 @@ function onStart() {
         <script src="{{ [
             'assets/js/jquery.min.js',
             'assets/js/foundation.min.js',
+            'assets/js/owl.carousel.min.js',
             'assets/js/app.js'
         ]|theme }}"></script>
         {% framework extras %}
-        {% scripts %}
 
     </body>
 </html>

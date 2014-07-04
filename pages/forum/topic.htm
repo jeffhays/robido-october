@@ -1,0 +1,13 @@
+title = "Forum Topic"
+url = "/forum/topic/:slug"
+layout = "default"
+description = "Viewing a single forum discussion topic"
+
+[forumTopic]
+idParam = ":slug"
+memberPage = "account"
+memberPageIdParam = ":slug"
+channelPage = "forum/channel"
+channelPageIdParam = ":slug"
+==
+{% component 'forumTopic' %}

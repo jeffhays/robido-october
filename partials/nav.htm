@@ -1,0 +1,41 @@
+<nav class="tab-bar">
+    <section class="left tab-bar-section">
+        <div class="icon-bar four-up">
+            <a href="{{ 'home'|page }}" class="item">
+                <i class="fa fa-home"></i>
+                <label class="hide-for-small">{{ name }}</label>
+            </a>
+            <a href="{{ 'blog'|page }}" class="item">
+                <i class="fa fa-pencil"></i>
+                <label class="hide-for-small">Blog</label>
+            </a>
+            <a href="{{ 'forum'|page }}" class="item">
+                <i class="fa fa-comments"></i>
+                <label class="hide-for-small">Forum</label>
+            </a>
+            <a href="{{ 'contact'|page }}" class="item">
+                <i class="fa fa-paper-plane"></i>
+                <label class="hide-for-small">Contact</label>
+            </a>
+        </div>
+    </section>
+
+    <section class="right-small">
+        <a class="right-off-canvas-toggle menu-icon" href="#"><span></span></a>
+    </section>
+</nav>
+
+<!-- Right Menu -->
+<aside class="right-off-canvas-menu">
+    <ul class="off-canvas-list">
+        <li><label>{{ name }} Pages</label></li>
+        <li><a href="{{ 'home'|page }}">Home</a></li>
+        <li><a href="{{ 'blog'|page }}">Blog</a></li>
+        <li><a href="{{ 'contact'|page }}">Contact</a></li>
+        <li><label>{{ name }} Community</label></li>
+        <li><a href="{{ 'forum'|page }}">Forum</a></li>
+        <li><label>{{ name }} Account</label></li>
+        <li><a href="{{ 'account'|page }}">Your Profile</a></li>
+        <li><a href="{{ 'reset-password'|page }}">Forgot Password</a></li>
+    </ul>
+</aside>

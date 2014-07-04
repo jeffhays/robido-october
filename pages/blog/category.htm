@@ -1,7 +1,7 @@
-title = "Blog"
-url = "/blog"
+title = "Blog Category"
+url = "/blog/category/:slug"
 layout = "default"
-description = "All your blogs are belong to us"
+description = "Viewing blog posts in a specific category"
 
 [blogPosts]
 postsPerPage = "10"
@@ -18,6 +18,12 @@ idParam = ":slug"
 categoryPage = "blog/category"
 categoryPageIdParam = ":slug"
 displayEmpty = "0"
+==
+<?php
+function onEnd() {
+    $this->page->title = $this['category']->name . ' Posts';
+}
+?>
 ==
 <div class="row">
     <div class="large-8 columns">
