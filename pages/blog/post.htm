@@ -5,6 +5,12 @@ description = "Viewing a single blog post"
 
 [blogPost]
 idParam = ":slug"
+
+[forumEmbedTopic]
+idParam = ":slug"
+channelId = "embedded"
+memberPage = "account"
+memberPageIdParam = ":slug"
 ==
 <?php
 function onEnd() {
@@ -13,3 +19,6 @@ function onEnd() {
 ?>
 ==
 {% component 'blogPost' %}
+
+<h3 class="subheader">Comments</h3>
+{% component 'forumEmbedTopic' %}
